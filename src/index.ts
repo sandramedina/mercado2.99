@@ -1,3 +1,4 @@
+
 let producto1 = prompt("ingresar el nombre del producto");
 let producto2 = prompt("ingresar el nombre del segundo producto");
 let producto3 = prompt("ingresar el nombre del tercer producto");
@@ -15,9 +16,25 @@ let precio2: number = Number(prompt("ingresar precio del segundo producto"));
 let precio3: number = Number(prompt("ingresar precio del tercer producto"));
 
 console.log("Bienvenido al Supermercado");
+
+function cargarProductos() {
+  producto1 = prompt("ingresar el nombre del producto");
+  producto2 = prompt("ingresar el nombre del segundo producto");
+  producto3 = prompt("ingresar el nombre del tercer producto");
+  stock1= Number(prompt("ingresar stock disponible del primer producto"));
+  stock2 = Number(prompt("ingresar stock disponible del segundo producto"));
+  stock3 = Number(prompt("ingresar stock disponible del tercer producto"));
+  precio1 = Number(prompt("ingresar precio del primer producto"));
+  precio2 = Number(prompt("ingresar precio del segundo producto"));
+  precio3 = Number(prompt("ingresar precio del tercer producto"));
+  console.log(`Nuestros productos disponibles son  ${stock1} ${producto1}, cuesta ${precio1} cada uno, ${stock2} ${producto2}, cuesta ${precio2} cada uno, ${stock3} ${producto3}, cuesta ${precio3} cada uno.`);
+}
+cargarProductos()
+
 console.log(
   `Nuestros productos disponibles son  ${stock1} ${producto1}, cuesta ${precio1} cada uno, ${stock2} ${producto2}, cuesta ${precio2} cada uno, ${stock3} ${producto3}, cuesta ${precio3} cada uno.`
 );
+
 let compra1: number = Number(prompt(`cuantas ${producto1} desea llevar?`));
 let compra2: number = Number(prompt(`cuantas ${producto2} desea llevar?`));
 let compra3: number = Number(prompt(`cuantas ${producto3} desea llevar?`));
@@ -29,6 +46,17 @@ let precioTotal: number = calculo1 + calculo2 + calculo3;
 let stockRestante1: number = stock1 - compra1;
 let stockRestante2: number = stock2 - compra2;
 let stockRestante3: number = stock3 - compra3;
+
+function cargarCompra(){
+compra1 = Number(prompt(`cuantas ${producto1} desea llevar?`));
+compra2 = Number(prompt(`cuantas ${producto2} desea llevar?`));
+compra3 = Number(prompt(`cuantas ${producto3} desea llevar?`));
+ }
+
+
+
+}
+cargarCompra()
 
 while (compra1 <= 0) {
   console.log("numero invalido");
@@ -61,6 +89,8 @@ for (let i = 0; i < compra3; i++) {
 }
 let compraTotal = compra1 + compra2 + compra3;
 
+
+
 if (compra1 > stock1 || compra2 > stock2 || compra3 > stock3) {
   console.log(`no tenemos stock suficiente para su pedido, intente de vuelta`);
 } else {
@@ -73,3 +103,4 @@ if (compra1 > stock1 || compra2 > stock2 || compra3 > stock3) {
   );
   console.log("muchas gracias por su compra, vuelva pronto!");
 }
+ 
